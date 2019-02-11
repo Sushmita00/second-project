@@ -55,29 +55,25 @@ path_entry.config(font=('Times New Roman',12),)
 upload_button=Button(root,text="Upload File",foreground="red",mand=lambda : select_image(path_entry.get()))
 upload_button.grid(row=3,column=2,padx=10,pady=10)
 reset_but=Button(root,text="Reset",foreground="blue",command=lambda: clear_field(path_entry))
-reset_but.grid(row=3,column=3,padx=10,pady=10)
-
-
-
-
-
-'''
+reset_but.grid(row=3,column=3,padx=10,pady=1
 import datetime as dt
-import steganography as lsb
+from stegano import lsb
 import time
 
 #hide the message inside the image
-hide=lsb.hide('2.png','Hello')
+hide=lsb.hide('fav.jpg','Hello')
 msg_time=time.asctime().replace(' ','')
 msg_time=msg_time.replace(':','')
 #save the image with new name
-hide.save('secret-pic'+msg_time+'.png')
+hide.save('secret-pic'+msg_time+'.jpg')
 
 #to get the secret message from the image
-msg=lsb.reveal('secret-pic.png')
+msg=lsb.reveal('secret-pic.jpg')
 #print th msg
 print(msg)
+'''
 
-
+def _msgBox():
+    mBox.showinfo('This is a Title','A python GUI created using tkinter:\n The year 2019')
 
 root.mainloop()
